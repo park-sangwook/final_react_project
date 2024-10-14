@@ -1,0 +1,107 @@
+.category-img {
+    padding: 30px 100px;
+    background-image: url(https://www.yogiyo.co.kr/mobile/image/bg-top.png?v=1);
+    background-color: #3b2114;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+.menu-container{
+    border-bottom: 1px solid black;
+    width: 100%;
+    position: -webkit-sticky;
+    top:10px;
+}
+.menu-list{
+    list-style-type: none;
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+}
+.menu-list li{
+    position: relative;
+    text-align: center;
+    padding: 0 12px;
+    height: 50px;
+    font-size: .8em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.menu-list li:first-child:before{
+    display: none;
+}
+.menu-list li:hover, .selected{
+    background-color: #333;
+    color:white;
+}
+.menu-list li:first-child:hover{
+    background-color: transparent;
+}
+.menu-list li:hover::before,.selected::before{
+    background-color: #333;
+}
+.menu-list li::before{
+    width: 1px;
+    content: "";
+    height: 20px;
+    position: absolute;
+    top:15px;
+    left:0;
+    background-color: #beb9b9;
+}
+.restaurant-container{
+    display: flex;
+    width: 986px;
+    margin: 20px auto;
+}
+.main-item{
+    width: 620px;
+    height: 500px;
+    box-sizing: border-box;
+}
+.food-img img{
+    width: 85px;
+}
+.restaurant-title{
+    font-size: 1.5em;
+    padding: 10px;
+}
+.food-img{
+    padding: 10px;
+    box-sizing: border-box;
+}
+.food-info{
+    padding: 10px 0;
+}
+.food-item{
+    width: 100%;
+    height: 110px;
+    border: 1px solid #d9d9d9;
+    display: flex;
+}
+.food-menu{
+    display: flex;
+    margin-top: 20px;
+}
+.food-menu-item{
+    width:34%;
+    height: 45px;
+    border: 1px solid #d9d9d9;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.food-menu-selected {
+    border: 0;
+    border-bottom: 5px solid #fa0050;
+    color: #fa0050;
+}
+.food-list{
+    width: 100%;
+}
+img{
+    width: 150px;
+}

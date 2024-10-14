@@ -1,0 +1,89 @@
+.login-wrap{
+    width: 820px;
+    margin: 20px auto;
+}
+.btn_login, .btn_logout, .btn_join {
+    width: 100%;
+    height: 40px;
+    border-radius: 0;
+    border: none;
+    background-color: #fa0050;
+    font-size: 15px;
+    color: #fff !important;
+    margin-top: 7px;
+}
+.btn[disabled] {
+    border-color: #ccc;
+    background-color: #ccc;
+    color: #fff;
+}
+.login-title{
+    display: block;
+    background: url(https://www.yogiyo.co.kr/mobile/image/logo-yogiyo-2.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992) no-repeat;
+    background-size: 109px;
+    width: 109px;
+    height: 45px;
+    text-indent: -9999em;
+    overflow: hidden;
+    margin: 0 auto 17px auto;
+}
+.list-group {
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    height: 35px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.login-form .list-group-item input, .join-wrap .list-group-item input {
+    width: 100%;
+    border: none;
+}
+.login-wrap .checkbox {
+    margin-top: 10px;
+    position: relative;
+}
+.radio label, .checkbox label {
+    min-height: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+.login-wrap .checkbox span.inquiry {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #999;
+}
+.login-wrap .checkbox span.inquiry a {
+    color: #999;
+}
+.btn-group>div{
+    width: 100%;
+    display: flex;
+    padding: 0 110px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+.login-wrap .naver-btn img{
+    width: 40px;
+    background-color: transparent;
+}
+.naver-title{
+    color: #999;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+.btn-group{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    column-gap: 15px;
+}
+.btn{
+    cursor: pointer;
+}

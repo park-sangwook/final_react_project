@@ -1,0 +1,16 @@
+.swiper-button-next, .swiper-button-prev {
+    display: none;
+    position: relative;
+}
+.swiper-button-next::after{
+    background-image: url(https://www.yogiyo.co.kr/mobile/image/btn-right.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992);
+    position: absolute;
+    top:0;
+}
+.swiper-button-next {
+    right: 10px; /* 오른쪽 위치 */
+}
+
+.swiper-button-prev {
+    left: 10px; /* 왼쪽 위치 */
+}

@@ -1,0 +1,120 @@
+body{
+    height: 100%;
+    width: 100%;
+}
+.category-img {
+    padding: 30px 100px;
+    background-image: url(https://www.yogiyo.co.kr/mobile/image/bg-top.png?v=1);
+    background-color: #3b2114;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+.menu-container{
+    border-bottom: 1px solid black;
+    width: 100%;
+    position: -webkit-sticky;
+    top:10px;
+}
+.menu-list{
+    list-style-type: none;
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+}
+.menu-list li{
+    position: relative;
+    text-align: center;
+    padding: 0 12px;
+    height: 50px;
+    font-size: .8em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.menu-list li:first-child:before{
+    display: none;
+}
+.menu-list li:hover, .selected{
+    background-color: #333;
+    color:white;
+}
+.menu-list li:first-child:hover{
+    background-color: transparent;
+}
+.menu-list li:hover::before,.selected::before{
+    background-color: #333;
+}
+.menu-list li::before{
+    width: 1px;
+    content: "";
+    height: 20px;
+    position: absolute;
+    top:15px;
+    left:0;
+    background-color: #beb9b9;
+}
+.search-icon {
+    display: block;
+    background: url(https://www.yogiyo.co.kr/mobile/image/sprite-icon.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992) no-repeat -58px 0px;
+    border: 1px solid #d9d9d9;
+    background-size: 300px;
+    width: 3px;
+    top:10px;
+    right: 10px;
+    text-indent: -999em;
+}
+.list-option{
+    width: 1130px;
+    text-align: right;
+    height: 45px;
+    margin: 10px 0;
+}
+.list-option-inner>select{
+    border: 1px solid black;
+}
+.food-container{
+    display: flex;
+    width: 985px;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    column-gap: 20px;
+    row-gap: 10px;
+}
+.food-img img{
+    width: 85px;
+}
+.food-img{
+    padding: 10px;
+    box-sizing: border-box;
+}
+.food-info{
+    padding: 10px 0;
+}
+.food-title{
+    font-size: 1.3em;
+}
+.food-item{
+    width: 480px;
+    height: 110px;
+    border: 1px solid #d9d9d9;
+    display: flex;
+}
+.food-review{
+    display: flex;
+    column-gap: 15px;
+}
+.food-review>div{
+    position: relative;
+}
+.food-review>div::before{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 15px;
+    top:3px;
+    left:-5px;
+    background-color: rgb(165, 152, 152);
+}
+.food-review>div:first-child::before{
+    display: none;
+}
