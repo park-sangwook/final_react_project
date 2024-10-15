@@ -1,7 +1,12 @@
 import React,{useState} from "react";
 import FoodSwiper from "../components/FoodSwiper"
+import Restaurant_Menu_Detail from "./Restaurant_Menu_Detail";
 export default function Restaurant_Menu({onSendData}){
     const [iconOption,setIconOption] = useState(false);
+    const [show,setShow] = useState(false);
+    const closeHandler = ()=>{
+        setShow(false)
+    }
     const iconHandler = ()=>{
         setIconOption(!iconOption);
         onSendData({'name':'menu',iconOption});
@@ -10,6 +15,7 @@ export default function Restaurant_Menu({onSendData}){
         <>
             <div className="food-list">
                     <FoodSwiper />
+                {show && <Restaurant_Menu_Detail idx={1} closeHandler={closeHandler} show={show}/>}
             </div>
             <div className="panel-heading">
             <h4 className="panel-title">
@@ -19,7 +25,7 @@ export default function Restaurant_Menu({onSendData}){
             </a>
                 <div style={{display:iconOption?'block':'none'}}>
                     <ul className="popular-menu">
-                        <li>
+                        <li onClick={()=>setShow(true)}>
                             <div className="menu-text">
                                 <div className="menu-text-title">짜장면</div>
                                 <div className="menu-text-info">100% 국내산 돼지고기, 양파, 춘장을 볶아 만든 기본에 충실한 짜장면</div>
@@ -51,7 +57,7 @@ export default function Restaurant_Menu({onSendData}){
                             </div>
                             <div><img src="https://images.yogiyo.co.kr/image/yogiyo/STOCK_IMG/%EC%A4%91%EC%8B%9D/%EB%B0%98%EB%B0%98/%EC%8A%A4%ED%83%81_20210727_DHK%EC%99%B8%EB%B6%80_%ED%83%95%EC%A7%AC%EB%A9%B4_Side01_1080x640_RPGC80.jpg" alt="" /></div>
                         </li>
-                        <li>
+                        <li onClick={()=>setShow(true)}>
                             <div className="menu-text">
                                 <div className="menu-text-title">탕볶밥</div>
                                 <div className="menu-text-info">소스 따로 옵션 미선택시 요청사항에 남겨주셔도 소스 부어서 나갑니다 : )</div>

@@ -45,9 +45,9 @@ export default function Login(){
             <button type="submit" className="btn ng-binding btn_login" onClick={loginHandler} >로그인</button>
             <div className="btn-group">
                 <div className="naver-btn"><div><img src={naver} alt="" /></div><div className="naver-title">네이버로 로그인</div></div>
-                <div className="kakao-btn"><div style={{display:'flex',alignItems:'center'}}><img src="https://www.yogiyo.co.kr/mobile/image/ic_logo_kakao.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992" alt="" /></div><div className="naver-title">카카오로 로그인</div></div>
+                <div className="kakao-btn"><div style={{display:'flex',alignItems:'center'}}><img width={30} src="https://www.yogiyo.co.kr/mobile/image/ic_logo_kakao.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992" alt="" /></div><div className="naver-title">카카오로 로그인</div></div>
             </div>
-            <img src="https://www.yogiyo.co.kr/mobile/image/signin_banner.png" width={820} style={{marginTop:'20px'}} alt="" />
+            <img src="https://www.yogiyo.co.kr/mobile/image/signin_banner.png" style={{marginTop:'20px',width:'830px'}} alt="" />
         </div>
         <Footer />
         </>

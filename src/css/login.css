@@ -66,6 +66,7 @@
     display: flex;
     padding: 0 110px;
     cursor: pointer;
+    height: 50px;
     border: 1px solid #ddd;
 }
 .login-wrap .naver-btn img{

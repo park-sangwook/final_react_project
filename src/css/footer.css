@@ -58,6 +58,9 @@
     line-height: 1.6;
     padding-left: 118px;
 }
+.food-swiper img{
+    width: 140px;
+}
 .company-logo a {
     display: block;
     background: url(https://www.yogiyo.co.kr/mobile/image/img-footer1.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992) no-repeat;
