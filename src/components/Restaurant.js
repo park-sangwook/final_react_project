@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import FoodSwiper from "./FoodSwiper"
 import Footer from "./Footer";
 import "../css/restaurant.css"
+import Restaurant_Menu from "../components_sub/Restaurant_Menu";
+import Restaurant_Review from "../components_sub/Restaurant_Review";
+import Restaurant_Info from "../components_sub/Restaurant_Info";
 export default function Restaurant(){
+    const [iconOption,setIconOption] = useState(true);
+    const [length,setLength] = useState(0);
+    const [menu,setMenu] = useState('menu');
+    const ChildData = (data)=>{
+        switch(data.name){
+            case "menu":
+                setIconOption(data.iconOption);
+                if(iconOption)setLength(600);
+                else setLength(0);
+                break;
+            case "review":
+                setLength(data.size);
+                break;
+            default:
+                setLength(data.size);
+        }
+    }
     const {idx} = useParams();
-    console.log(idx);
     return(
         <>
         <Header />
@@ -32,7 +51,7 @@ export default function Restaurant(){
         <div className="restaurant-container">
             <div className="main-item">
                 <div className="restaurant-title">달려라 짜장</div>
-                <div className="food-item">
+                <div className="restaurant-item">
                     <div className="food-img"><img src="https://www.yogiyo.co.kr/mobile/image/default_restaurant_logo.png" alt="" /></div>
                     <div className="food-info">
                         <div>☆ 4.8</div>
@@ -41,17 +60,19 @@ export default function Restaurant(){
                     </div>
                 </div>
                 <div className="food-menu">
-                    <div className="food-menu-item food-menu-selected">메뉴</div>
-                    <div className="food-menu-item">클린리뷰</div>
-                    <div className="food-menu-item">정보</div>
+                    <div className={`food-menu-item ${menu=='menu'? 'food-menu-selected':''}`} onClick={()=>setMenu("menu")}>메뉴</div>
+                    <div className={`food-menu-item ${menu=='review'? 'food-menu-selected':''}`} onClick={()=>setMenu("review")}>클린리뷰</div>
+                    <div className={`food-menu-item ${menu=='info'? 'food-menu-selected':''}`} onClick={()=>setMenu("info")}>정보</div>
                 </div>
-                <div className="food-list">
-                    <FoodSwiper />
-                </div>
+                {menu ==='menu' && <Restaurant_Menu onSendData={ChildData}/> }
+                {menu ==='review' && <Restaurant_Review onSendReview={ChildData}/> }
+                {menu ==='info' && <Restaurant_Info onSendReview={ChildData}/> }
+                
             </div>
             <div className="order-sheet"></div>
         </div>
-        <Footer />
+
+        <Footer style={{marginTop:length+'px'}}/>
         </>
     )
 }

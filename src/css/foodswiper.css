@@ -1,11 +1,21 @@
-.swiper-button-next, .swiper-button-prev {
-    display: none;
-    position: relative;
-}
-.swiper-button-next::after{
+.swiper-button-next{
     background-image: url(https://www.yogiyo.co.kr/mobile/image/btn-right.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992);
-    position: absolute;
-    top:0;
+    background-repeat: no-repeat;
+    background-position: -17px -10px;
+    transform: translateX(20px);
+    width: 25px;
+    height: 35px;
+}
+.swiper-button-prev{
+    background-image: url(https://www.yogiyo.co.kr/mobile/image/btn-left.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992);
+    background-repeat: no-repeat;
+    background-position: -17px -10px;
+    transform: translateX(-20px);
+    width: 25px;
+    height: 35px;
+}
+.swiper-button-next::before{
+    background-image: url(https://www.yogiyo.co.kr/mobile/image/btn-right.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992);
 }
 .swiper-button-next {
     right: 10px; /* 오른쪽 위치 */
@@ -13,4 +23,21 @@
 
 .swiper-button-prev {
     left: 10px; /* 왼쪽 위치 */
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    content: '';
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    content: '';
+}
+.restaurant-item-title{
+    font-weight: 550;
+    padding: 10px;
+}
+.restaurant-item-price{
+    padding: 0 10px;
+}
+.restaurant-menu-item{
+    border: solid 1px #d9d9d9;
+    padding: 10px;
 }

@@ -73,7 +73,7 @@
 .food-info{
     padding: 10px 0;
 }
-.food-item{
+.restaurant-item{
     width: 100%;
     height: 110px;
     border: 1px solid #d9d9d9;
@@ -101,7 +101,130 @@
 }
 .food-list{
     width: 100%;
+    position: relative;
 }
 img{
-    width: 150px;
+    width: 140px;
+}
+.panel-heading {
+    color: #333;
+    background-color: #e6e6e6;
+    border-radius: 0;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+.panel-title a {
+    display: block;
+    padding: 10px 15px;
+}
+.menu-name.pop-menu {
+    background-image: url(https://www.yogiyo.co.kr/mobile/image/ico_favmenu.png);
+    background-repeat: no-repeat;
+    background-position: 0 8px;
+    background-size: 20px 20px;
+    padding-left: 22px;
+    padding-right: 0 !important;
+}
+.icon-arr-down {
+    background: url(https://www.yogiyo.co.kr/mobile/image/sprite-icon.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992) no-repeat -150px -47px;
+    background-size: 350px;
+    display: inline-block;
+    position: absolute;
+    right:10px;
+    width: 16px;
+    height: 16px;
+    margin: 8px 0px 0 0;
+}
+.clearfix{
+    position: relative;
+}
+.icon-arr-up {
+    background: url(https://www.yogiyo.co.kr/mobile/image/sprite-icon.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992) no-repeat -186px -47px;
+    background-size: 350px;
+    position: absolute;
+    right:10px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 8px 0px 0 0;
+}
+
+.popular-menu{
+    width: 100%;
+    background-color: #fff;
+    padding: 0;
+}
+.popular-menu li{
+    padding: 12px 10px 12px 15px;
+    border: 1px solid #d9d9d9;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+.menu-text-title{
+    color: #333;
+    font-weight: bold;
+    line-height: 1.4;
+    padding-top: 5px;
+}
+.menu-text-info{
+    padding: 10px 0;
+    font-size: .73em;
+    color: #999;
+}
+.menu-text-price{
+    color: #333;
+    font-weight: normal;
+}
+.review-title{
+    font-size: 1.2em;
+    padding: 10px 0;
+}
+.review-img img{
+    width: 500px;
+}
+.review-content{
+    padding: 10px 0;
+}
+.restaurant-review{
+    border: 1px solid #d9d9d9;
+    padding: 0 10px;
+}
+.restaurant-info{
+    padding: 10px;
+}
+.restaurant-info .info-item-title {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #999;
+    padding: 0 0 7px 20px;
+    margin-bottom: 18px;
+    background-size: 16px;
+}
+.restaurant-info .info-icon {
+    background: url(https://www.yogiyo.co.kr/mobile/image/ic_owner_notice@3x.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992) no-repeat 0 1px;
+    background-size: 20px;
+}
+.info-icon1 {
+    background: url(https://www.yogiyo.co.kr/mobile/image/ic_info_res.png?v=9f40842b5baddecae3aa0f8699dbcde6250d5992) no-repeat 0 1px;
+    background-size: 20px;
+}
+.info-item p {
+    color: #333;
+    font-size: 14px;
+}
+.info-item{
+    padding: 10px 0;
+}
+.info-item i {
+    color: #999;
+    font-style: normal;
+    display: inline-block;
+    width: 95px;
+    letter-spacing: -1px;
 }
