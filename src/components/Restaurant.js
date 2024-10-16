@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "./Header";
 import FoodSwiper from "./FoodSwiper"
@@ -21,23 +22,22 @@ export default function Restaurant(){
     const [total,setTotal] = useState(0);
     const {idx} = useParams();
     const li = document.querySelectorAll(".menu-list li");
+
     const onSubmitMenu = (data)=>{
         let flag = false;
         let sum=0;
         for(let i=0;i<order.length;i++){
             if(order[i].name===data.name){
-                console.log(order[i].count,data.count);
                 order[i].count+=data.count;
-                console.log("이거 타야하는데? ",order[i].count);
                 flag=true;
             }
         }
+        console.log("data ",data);
         if(!flag) {
             setOrder([...order,data]);
         }
         else setOrder([...order]);
         setTotal(total+data.price*data.count);
-        console.log("restaurant : ",data);
     }
     const menuDelete = (idx)=>{
         setOrder(prev=>prev.filter((_,i)=>i != idx.index));
@@ -156,7 +156,7 @@ export default function Restaurant(){
                         배달요금 2,000원 별도
                     </div>
                     <div className="order-total">합계 : <span>{total.toLocaleString()}</span>원</div>
-                    <button className="btn btn-lg btn-ygy1 btn-block" >주문하기</button>
+                    <Link to={{pathname:"/pay"}} state={{type:order}}><button className="btn btn-lg btn-ygy1 btn-block">주문하기</button></Link>
                 </div>
             </div>
         </div>

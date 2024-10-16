@@ -1,0 +1,113 @@
+.pay-container{
+    display: flex;
+    width: 1020px;
+    margin: 20px auto;
+    justify-content: space-between;
+}
+.pay-info{
+    width: 60%;
+}
+.sub-title {
+    background-color: #333;
+    color: #fff;
+    font-size: 110%;
+    padding: 10px 10px 10px 15px;
+}
+.panel{
+    border: 1px solid #ddd;
+}
+.panel-title a{
+    padding: 10px 0;
+}
+.panel-default > .panel-heading {
+    color: #333;
+    background-color: #e6e6e6;
+    border-radius: 0;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #ddd;
+}
+.form-group {
+    display: flex;
+    padding: 10px;
+    column-gap: 20px;
+}
+.form-group input{
+    border: 1px solid #ccc;
+    width: 80%;
+}
+.form-group>div{
+    width: 100%;
+}
+.form-group label {
+    padding-bottom: 3px;
+    display: block;
+    width: 120px;
+}
+
+.pay-order-sheet{
+    width: 35%;
+    border: 1px solid #ddd;
+    height: auto;
+    height: 221px;
+}
+.panel-heading {
+    color: #333;
+    background-color: #e6e6e6;
+    padding: 10px;
+    border-radius: 0;
+}
+.checkout-order-list .restaurant_name {
+    border-bottom: 1px solid #d9d9d9;
+    height: 23px;
+    padding: 10px;
+}
+.checkout-order-list .order-list {
+    border-radius: 0;
+    margin-bottom: 0;
+    background-color: #fff8eb;
+    padding-top: 10px;
+}
+.checkout-order-list .order-list .list-group-item {
+    background-color: #fff8eb;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding: 10px;
+}
+.list-group.order-list{
+    margin: 0;
+    padding: 0;
+}
+.list-group1{
+    color: #fa0050;
+    justify-content: space-between;
+    padding: 10px;
+    display: flex;
+}
+.order-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+.btn-ygy1 {
+    color: #fff;
+    background-color: #fa0050;
+    border-color: #fa0050;
+    border-radius: 0;
+}
+.panel-body textarea{
+    width: 85%;
+    height: 70px;
+    margin: 20px;
+    border: 1px solid #bbabab;
+}
+.pay-list-item{
+    list-style-type: none;
+    padding: 10px;
+}

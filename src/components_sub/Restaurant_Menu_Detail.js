@@ -13,7 +13,6 @@ export default function Restaurant_Menu_Detail({idx,closeHandler,show,onSubmitMe
     const plusHandler = ()=>{
         setCount(count+1);
     };
-    console.log(idx);
     const orderTableInsert = (obj)=>{
         obj.count = count;
         onSubmitMenu(obj);

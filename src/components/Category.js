@@ -16,7 +16,7 @@ export default function Category(){
                 li[liIdx].classList.remove("selected");
                 this.classList.add("selected");
                 liIdx = index;
-                nav("/category/"+index);
+                nav("/category/"+(index-1));
             })
         });
         axios.get('/category/'+idx)
@@ -24,7 +24,7 @@ export default function Category(){
             console.log(res.data);
             setData(res.data);
         }).catch(error=>console.log(error));
-    })
+    },[idx])
     return (
         <div className="top">
             <Header />

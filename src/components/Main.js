@@ -2,12 +2,13 @@ import React, { useContext, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Cookies from "js-cookie"
+import Session from 'react-session-api'
 import "../css/main.css"
 import axios from "axios";
 import { MyContext } from "../context/MyContext";
 
 export default function Main(){
-    const {user,setUser} = useContext(MyContext);
+    
     const token = Cookies.get("token")?"Bearer "+Cookies.get("token"):null;
     useEffect(()=>{
         axios.get("/user",{
@@ -17,7 +18,7 @@ export default function Main(){
         })
         .then(res=>{
             console.log(res.data);
-            setUser(res.data.id);
+            localStorage.setItem("id",res.data.id);
         }).catch(error=>console.log(error));
         const item = document.querySelectorAll(".item");
         console.log(item);

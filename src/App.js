@@ -8,6 +8,7 @@ import UserMypage from "./components/UserMypage";
 import { MyContext } from "./context/MyContext";
 import Category from "./components/Category";
 import Restaurant from "./components/Restaurant";
+import Pay from "./components/Pay";
 function App() {
   const [user,setUser] = useState('');
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/user" element={<UserMypage />}/>
           <Route path="/category/:idx" element={<Category />}/>
           <Route path="/restaurant/:idx" element={<Restaurant />}/>
+          <Route path="/pay" element={<Pay />}/>
         </Routes>
       </MyContext.Provider>
     </BrowserRouter>

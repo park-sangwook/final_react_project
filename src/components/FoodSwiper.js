@@ -15,7 +15,6 @@ const MySwiper = ({onSubmitMenu2,menuList}) => {
     setShow(true);
     setIdx(idx);
   }
-  console.log(menuList);
   const closeHandler = ()=>{
     setShow(false)
   }

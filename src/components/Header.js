@@ -2,14 +2,17 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom"
 import { MyContext } from "../context/MyContext";
 import Cookies from "js-cookie"
+import Session from 'react-session-api'
 const logoutHandler = ()=>{
     Cookies.remove("token");
     window.location.assign("/");
     alert("로그아웃 되었습니다.");
+    localStorage.removeItem("id");
 }
 export default function Header(){
     const nav = useNavigate();
-    const {user} = useContext(MyContext);
+    const user = localStorage.getItem("id");
+    console.log("user ",user);
     return(
         <div className="header-container">
             <div className="header-inner">
