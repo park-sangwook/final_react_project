@@ -163,6 +163,9 @@
     display: flex;
     justify-content: space-between;
 }
+.popular-menu li img{
+    width: 140px;
+}
 .menu-text-title{
     color: #333;
     font-weight: bold;
@@ -233,7 +236,7 @@
     padding: 10px 10px 10px 15px;
 }
 .order-sheet{
-    width: 100%;
+    width: 345px;
 }
 .cart-empty {
     background: #fff;
@@ -251,4 +254,9 @@
 .order-table-text{
     text-align: right;
     padding: 10px 0;
+}
+.order-total{
+    padding: 10px;
+    text-align: right;
+    color:red;
 }

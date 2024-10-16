@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import "../css/category.css"
@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 export default function Category(){
     const {idx} = useParams();
+    const [data,setData] = useState([]);
     const nav = useNavigate();
     useEffect(()=>{
         const li = document.querySelectorAll(".menu-list li");
@@ -17,7 +18,12 @@ export default function Category(){
                 liIdx = index;
                 nav("/category/"+index);
             })
-        })
+        });
+        axios.get('/category/'+idx)
+        .then(res=>{
+            console.log(res.data);
+            setData(res.data);
+        }).catch(error=>console.log(error));
     })
     return (
         <div className="top">
@@ -55,17 +61,20 @@ export default function Category(){
                 </div>
             </div>
             <div className="food-container">
-                <div className="food-item" onClick={()=>nav("/restaurant/1")}>
-                    <div className="food-img"><img src="https://www.yogiyo.co.kr/mobile/image/default_restaurant_logo.png" alt="" /></div>
-                    <div className="food-info">
-                        <div className="food-title">달려라짜장</div>
-                        <div className="food-review">
-                            <div>☆ 4.8</div>
-                            <div>리뷰 11889</div>
-                            <div> 사장님 댓글 10929</div>
+                {data?data.map(item=>(
+                    <div className="food-item" onClick={()=>nav("/restaurant/"+item.idx)}>
+                        <div className="food-img"><img src={item.image} alt="" /></div>
+                        <div className="food-info">
+                            <div className="food-title">{item.name}</div>
+                            <div className="food-review">
+                                <div>☆ {item.rate}</div>
+                                <div>리뷰 11889</div>
+                                <div> 사장님 댓글 10929</div>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                )):<></>}
                 <div className="food-item"></div>
                 <div className="food-item"></div>
                 <div className="food-item"></div>
