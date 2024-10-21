@@ -19,19 +19,20 @@
     cursor: pointer;
 }
 .header-btn{
-    position: relative;
     top: 0;
     left: 0;
     margin: 12px 0 7px 0;
-    width: 150px;
     max-height: 40px;
+    width: 250px;
+    display: flex;
     padding: 7px 0;
     font-size: 18px;
+    column-gap: 5px;
 }
 .header-btn button{
-    position: absolute;
-    height: 80%;
+    height: 100%;
     padding: 0 2px;
+    width: 320px;
     color: #fff;
     text-align: center;
     width: 100%;

@@ -57,6 +57,7 @@ export default function Restaurant(){
         }
     }
     const ChildData = (data)=>{
+        console.log("data : ",data);
         switch(data.name){
             case "menu":
                 setIconOption(data.iconOption);
@@ -64,7 +65,8 @@ export default function Restaurant(){
                 else setLength(0);
                 break;
             case "review":
-                setLength(data.size);
+                setLength(data.size+100);
+                console.log("length ",data.size);
                 break;
             default:
                 setLength(data.size);
@@ -117,7 +119,7 @@ export default function Restaurant(){
                         <div className={`food-menu-item ${menu=='info'? 'food-menu-selected':''}`} onClick={()=>setMenu("info")}>정보</div>
                     </div>
                     {menu ==='menu' && <Restaurant_Menu onSendData={ChildData} onSubmitMenu3={onSubmitMenu} menuList={data.menuList}/> }
-                    {menu ==='review' && <Restaurant_Review onSendReview={ChildData}/> }
+                    {menu ==='review' && <Restaurant_Review onSendReview={ChildData} idx={idx}/> }
                     {menu ==='info' && <Restaurant_Info onSendReview={ChildData}/> }
             </div>
             <div className="order-sheet">

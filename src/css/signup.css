@@ -1,0 +1,25 @@
+.signup-container{
+    width: 1020px;
+    margin: 20px auto;
+    position: relative;
+}
+.signup-container button{
+    color:cadetblue;
+    border-color: cadetblue;
+    background-color: white;
+    border-radius: 5px;
+    height: 35px;
+    width: 75px;
+}
+.signup-container>div{
+    width: 100%;
+    position: relative;
+    left:25%;
+}
+.signup-container>div input{
+    width: 40%;
+    height: 35px;
+}
+.signup-container>div:first-child input{
+    width: 30%;
+}

@@ -23,7 +23,7 @@ const MySwiper = ({onSubmitMenu2,menuList}) => {
     <div className='food-swiper'>
         <Swiper navigation={false} modules={[Navigation]} onSwiper={(swiper=>(swiperRef.current = swiper))}className="mySwiper" slidesPerView={4}>
           {menuList?menuList.map(item=>(
-            <SwiperSlide><div className='restaurant-menu-item' onClick={()=>menuClick(item.idx)}><img src={item.image} alt="" /><div className='restaurant-item-title'>{item.name}</div><div className='restaurant-item-price'>{item.price}</div></div></SwiperSlide>
+            <SwiperSlide><div className='restaurant-menu-item' onClick={()=>menuClick(item.idx)}><img src={item.image} alt="" /><div className='restaurant-item-title'>{item.name}</div><div className='restaurant-item-price'>{item.price.toLocaleString()}</div></div></SwiperSlide>
 
           )):<></>}
             {/* <SwiperSlide><div className='restaurant-menu-item'><img src="https://images.yogiyo.co.kr/image/yogiyo/STOCK_IMG/%EC%A4%91%EC%8B%9D/%EC%84%B8%ED%8A%B8/%EC%8A%A4%ED%83%81_20201124_DHK%EB%82%B4%EB%B6%80_%EC%A7%9C%EC%9E%A5-%EC%A7%AC%EB%BD%95-%ED%83%95%EC%88%98%EC%9C%A1_Top01_1080x640_LXRP27.jpg" alt="" /><div className='restaurant-item-title'>2인 set. 탕수육</div><div className="restaurant-item-price">24000</div></div></SwiperSlide>

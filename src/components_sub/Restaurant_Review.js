@@ -1,14 +1,25 @@
-import { useEffect } from "react";
-
-export default function Restaurant_Review({onSendReview}){
-    useEffect(()=>{
-        onSendReview({'name':'review','size':200});        
+import { useEffect, useState } from "react";
+import axios from "axios";
+export default function Restaurant_Review({onSendReview,idx}){
+    const [data,setData] = useState([]);
+    useEffect(()=>{       
+        axios.get("/selectByCompany_idx/"+idx)
+        .then(res=>{
+            console.log(res.data);
+            setData(res.data);
+            onSendReview({'name':'review','size': res.data.length*300}); 
+        }).catch(error=>console.log(error));
     },[]);
     return(
-        <div className="restaurant-review">
-            <div className="review-title">asdf</div>
-            <div className="review-img"><img src="https://rev-static.yogiyo.co.kr/8da0cd8981453b065d290e022fc31866_tn.jpg" alt="" /></div>
-            <div className="review-content">맛 좋고 빠른조리 최고에요</div>
+        <div>
+            {data?data.map(item=>(
+                <div className="restaurant-review">
+                    <div className="review-title">{item.login_id}</div>
+                    <div className="review-img"><img src={`http://localhost:8080/images/${item.image}`} alt="" /></div>
+                    <div className="review-content">{item.content}</div>
+                </div>
+    
+            )):<></>}
         </div>
     )
 }

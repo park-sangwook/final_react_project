@@ -1,0 +1,71 @@
+.mypage-controller{
+    display: flex;
+    width: 1020px;
+    margin: 20px auto;
+}
+.mypage-left{
+}
+.mypage-left li{
+    list-style-type: none;
+    width: 120px;
+    font-size: 1.2em;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+.mypage-left ul{
+    padding: 0;
+    border-right: 1px solid black;
+}
+.right-item img{
+    width: 150px;
+}
+.right-item{
+    display: flex;
+    text-align: center;
+}
+.mypage-right{
+    padding: 0 10px;
+}
+.right-item-title{
+    font-size: 1.2em;
+    padding: 10px 0;
+}
+.hidden-container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 99;
+}
+.review-container{
+    z-index: 100;
+    position: absolute;
+    width: 450px;
+    height: 350px;
+    background-color: white;
+    left: 30%;
+    top:10%;
+}
+.mypage-review-title{
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px 0;
+}
+.review-container textarea{
+    width: 90%;
+    position: relative;
+    left:20px;
+    height: 240px;
+}
+.review-container button{
+    position: relative;
+    left:17%;
+    width: 100px;
+    height: 40px;
+    border-color:rgb(111, 214, 180);
+    background-color: transparent;
+    color:rgb(111, 214, 180);
+    border-radius: 10px;
+}

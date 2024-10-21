@@ -1,0 +1,96 @@
+.manager-container{
+    width: 1020px;
+    margin: 20px auto;
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 20px;
+}
+.manager-item{
+    width: 250px;
+    cursor: pointer;
+}
+.manager-item-img img{
+    width: 150px;
+}
+.manager-menu-container,.menu-insert-container{
+    position: fixed;
+    top:10%;
+    width: 500px;
+    left:30%;
+    border: 1px solid black;
+    height: 550px;
+    z-index: 110;
+    background-color: white;
+}
+.menu-title{
+    font-size: 1.5em;
+    padding: 10px;
+}
+.menu-item-img img{
+    width: 420px;
+    margin-left: 20px;
+}
+.menu-header{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+.menu-header img{
+    position: relative;
+    top:10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.menu-price{
+    position: relative;
+    left:20px;
+    top:10px;
+}
+.menu-price input{
+    font-size: 2em;
+    padding: 10px;
+    text-align: center;
+}
+.menu-btn{
+    padding: 10px;
+    position: relative;
+    top:10px;
+    text-align: center;
+}
+.menu-btn button{
+    font-size: 1.2em;
+    color:rgb(109, 150, 28);
+    width: 100px;
+    height: 50px;
+    border: 1px solid rgb(109, 150, 28);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: none;
+}
+.menu-insert{
+    position: relative;
+    left: 930px;
+    top:10px;
+}
+.menu-insert button{
+    font-size: 1.2em;
+    color:turquoise;
+    border: 1px solid turquoise;
+    background-color: white;
+    border-radius: 5px;
+}
+.menu-insert-container>div{
+    width: 100%;
+}
+.menu-insert-container>div>input{
+    width: 80%;
+    height: 30px;
+    margin: 10px;
+}
+.image-preview img{
+    width: 370px;
+    margin-left: 10px;
+}
+button{
+    cursor: pointer;
+}

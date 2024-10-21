@@ -1,8 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef,useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Cookies from "js-cookie"
 import Session from 'react-session-api'
+import { Map } from "react-kakao-maps-sdk";
 import "../css/main.css"
 import axios from "axios";
 import { MyContext } from "../context/MyContext";
@@ -10,23 +11,22 @@ import { MyContext } from "../context/MyContext";
 export default function Main(){
     
     const token = Cookies.get("token")?"Bearer "+Cookies.get("token"):null;
+    const mapContainer = useRef(null);
+    const [address, setAddress] = useState('');
+    const presentPosition = () => {
+        alert("hi");
+        
+    };
+
     useEffect(()=>{
-        axios.get("/user",{
-            headers:{
-                Authorization:token
-            }
-        })
-        .then(res=>{
-            console.log(res.data);
-            localStorage.setItem("id",res.data.id);
-        }).catch(error=>console.log(error));
+       
         const item = document.querySelectorAll(".item");
-        console.log(item);
         item.forEach((it,index)=>{
             it.addEventListener("click",function(){
                 window.location.assign("/category/"+index);
             })
-        })
+        })       
+        
     },[])
     return (
         <>
@@ -34,10 +34,10 @@ export default function Main(){
         <div className="main-img">
             <div className="input-group">
                 <div className="input-group-btn loc">
-                    <button className="btn btn-default ico-loc" type="button" ng-click="get_current_location()">&nbsp;</button>
+                    <button className="btn btn-default ico-loc" ref={mapContainer} onClick={presentPosition} type="button">&nbsp;</button>
                     </div>
                     <form action="." className="ng-pristine ng-invalid ng-invalid-required ng-valid-minlength">
-                        <input type="search" className="form-control ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-minlength ng-touched" name="address_input" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" placeholder="건물명, 도로명, 지번으로 검색하세요." ng-minlength="1" ng-required="true" ng-model="session_storage.location.address_input" bs-dropdown="" ng-focus="show_location_search()" required="required"/>
+                        <input type="search" className="form-control ng-pristine showLocation ng-scope ng-invalid ng-invalid-required ng-valid-minlength ng-touched" name="address_input" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" placeholder="건물명, 도로명, 지번으로 검색하세요." value={address} required="required"/>
                     </form>
                     <span id="button_search_address" className="input-group-btn search-btn show-search-buttons always-show-search-buttons">
                     <button className="btn-search-location-cancel btn-search-location btn btn-default" type="button" ng-click="clear_search_location_input($event)"><span className="searchfield-cancel-button">&nbsp;</span></button>
